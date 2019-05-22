@@ -22,6 +22,47 @@ Introduction
 Guake is a dropdown terminal made for the GNOME desktop environment. Guake's style of window is
 based on an FPS game, and one of its goals is to be easy to reach.
 
+
+Installation
+============
+
+From source code (recommand)
+----------------------------
+
+.. code-block:: bash
+
+   $ git clone https://github.com/guake/guake
+   $ cd guake
+   $ ./scripts/bootstrap-dev[debian, arch, fedora].sh run make
+   $ make
+   $ make install
+
+
+From distributions' package manager
+-----------------------------------
+
+Debian / Ubuntu
+^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   $ apt install guake
+
+Fedora
+^^^^^^
+
+.. code-block:: bash
+
+    $ dnf install -y guake
+
+Arch Linux
+^^^^^^^^^^
+
+.. code-block:: bash
+
+    $ pacman -S guake
+
+
 Features Request
 ----------------
 

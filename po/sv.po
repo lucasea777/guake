@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Guake 0.4.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-22 14:32+0200\n"
-"PO-Revision-Date: 2019-04-19 11:18+0000\n"
+"PO-Revision-Date: 2020-02-16 13:50+0000\n"
 "Last-Translator: Morgan Antonsson <morgan.antonsson@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/guake/guake/sv/"
 ">\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6-dev\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #: guake/prefs.py:78
 msgid "<user shell>"
@@ -619,10 +619,6 @@ msgstr "Visa flikrad"
 msgid "Use VTE titles for tab names"
 msgstr "Visa VTE-titel som fliknamn"
 
-#: data/prefs.glade:618
-msgid "Abbreviate directories in tab names"
-msgstr "Förkorta katalognamn i flikar"
-
 #: data/prefs.glade:643
 msgid "Max tab name length:"
 msgstr "Maxlängd för fliknamn:"
@@ -1163,10 +1159,14 @@ msgid ""
 "\n"
 "Do you want to continue?"
 msgstr ""
+"Du är på väg att återställa *alla* flikar!\n"
+"Detta betyder att alla terminaler och sidor kommer att ersättas.\n"
+"\n"
+"Vill du fortsätta?"
 
 #: guake/main.py:296
 msgid "Show support infomations"
-msgstr ""
+msgstr "Visa stödinformation"
 
 #: guake/guake_app.py:1240
 #, python-brace-format
@@ -1174,6 +1174,8 @@ msgid ""
 "Tabs session restore abort.\n"
 "Your session file ({session_filename}) missing schema_version as key"
 msgstr ""
+"Återställning av fliksession avbröts.\n"
+"Sessionsfilen ({session_filename}) saknar nyckeln schema_version"
 
 #: guake/guake_app.py:1252
 #, python-brace-format
@@ -1182,11 +1184,81 @@ msgid ""
 "Your session file schema version is higher than current version "
 "({session_file_schema_version} > {current_schema_version})."
 msgstr ""
+"Återställning av fliksession avbröts.\n"
+"Sessionsfilens schemaversion är högre än nuvarande version "
+"({session_file_schema_version} > {current_schema_version})."
 
 #: guake/data/prefs.glade:409
 msgid "Use workspace-specific tab sets (requires restart, only work on X11)"
-msgstr ""
+msgstr "Använd arbetsytespecifika flikar (kräver omstart, fungerar bara i X11)"
 
 #: guake/data/prefs.glade:809
 msgid "Hide tabbar when fullscreen"
+msgstr "Dölj flikfältet vid fullskärmsläge"
+
+#: guake/data/prefs.glade:739
+msgid "Display as tab names:"
+msgstr "Visa som fliknamn:"
+
+#: guake/data/prefs.glade:753
+msgid "Full Path"
+msgstr "Fullständig sökväg"
+
+#: guake/data/prefs.glade:754
+msgid "Abbreviated Path"
+msgstr "Förkortad sökväg"
+
+#: guake/data/prefs.glade:755
+msgid "Last Segment"
+msgstr "Sista segmentet"
+
+#: guake/main.py:99
+msgid "Put Guake out from fullscreen mode"
 msgstr ""
+
+#: guake/main.py:189
+msgid ""
+"Select a specific terminal in a split tab. Only useful with split terminals "
+"(TERMINAL_INDEX is the index of the tab)"
+msgstr ""
+"Välj en specifik terminal på en delad flik. Endast användbart med delade "
+"terminaler (TERMINAL_INDEX är flikens index)"
+
+#: guake/main.py:199
+msgid "Return the selected terminal index."
+msgstr ""
+
+#: guake/main.py:259
+msgid "Set the hexadecimal (#rrggbb) background color of the current terminal."
+msgstr ""
+"Ställ in den hexadecimala (#rrggbb) bakgrundsfärgen för den aktuella "
+"terminalen."
+
+#: guake/main.py:268
+msgid "Set the hexadecimal (#rrggbb) foreground color of the current terminal."
+msgstr ""
+"Ställ in hexadecimal (#rrggbb) förgrundsfärg för den aktuella terminalen."
+
+#: guake/main.py:285
+msgid "Set colors from settings."
+msgstr "Ställ in färger från inställningar."
+
+#: guake/main.py:293
+msgid "Set colors of the current terminal from settings."
+msgstr "Ställ in färger för den aktuella terminalen från inställningar."
+
+#: guake/main.py:358
+msgid "Show support infomation"
+msgstr "Visa supportinformation"
+
+#: guake/menus.py:26
+msgid "Reset custom colors"
+msgstr "Återställ anpassade färger"
+
+#: guake/dialogs.py:101
+msgid "Do you want to reset custom colors for this tab?"
+msgstr "Vill du återställa anpassade färger för den här fliken?"
+
+#: guake/data/prefs.glade:835
+msgid "New tabs appear after the current tab"
+msgstr "Nya flikar visas efter den aktuella fliken"

@@ -1,12 +1,15 @@
 import gi
-gi.require_version('Gtk', '3.0')
+
+gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from locale import gettext as _
-gi.require_version('Vte', '2.91')  # vte-0.42
+
+gi.require_version("Vte", "2.91")  # vte-0.42
 from gi.repository import Vte
 from guake.customcommands import CustomCommands
 
 import logging
+
 log = logging.getLogger(__name__)
 
 
@@ -17,15 +20,18 @@ def mk_tab_context_menu(callback_object):
     #   https://stackoverflow.com/questions/28465956/
     callback_object.context_menu = Gtk.Menu()
     menu = callback_object.context_menu
-    mi1 = Gtk.MenuItem(_("New Tab"))
-    mi1.connect("activate", callback_object.on_new_tab)
-    menu.add(mi1)
-    mi2 = Gtk.MenuItem(_("Rename"))
-    mi2.connect("activate", callback_object.on_rename)
-    menu.add(mi2)
-    mi3 = Gtk.MenuItem(_("Close"))
-    mi3.connect("activate", callback_object.on_close)
-    menu.add(mi3)
+    mi_new_tab = Gtk.MenuItem(_("New Tab"))
+    mi_new_tab.connect("activate", callback_object.on_new_tab)
+    menu.add(mi_new_tab)
+    mi_rename = Gtk.MenuItem(_("Rename"))
+    mi_rename.connect("activate", callback_object.on_rename)
+    menu.add(mi_rename)
+    mi_reset_custom_colors = Gtk.MenuItem(_("Reset custom colors"))
+    mi_reset_custom_colors.connect("activate", callback_object.on_reset_custom_colors)
+    menu.add(mi_reset_custom_colors)
+    mi_close = Gtk.MenuItem(_("Close"))
+    mi_close.connect("activate", callback_object.on_close)
+    menu.add(mi_close)
     menu.show_all()
     return menu
 
@@ -120,7 +126,7 @@ def mk_terminal_context_menu(terminal, window, settings, callback_object):
     # implementation does not support this at the moment
     if link:
         if len(link) >= FILE_SELECTION_LENGTH:
-            mi.set_label(_("Open Link: {!s}...").format(link[:FILE_SELECTION_LENGTH - 3]))
+            mi.set_label(_("Open Link: {!s}...").format(link[: FILE_SELECTION_LENGTH - 3]))
         else:
             mi.set_label(_("Open Link: {!s}").format(link))
         mi.set_sensitive(True)
@@ -133,7 +139,7 @@ def mk_terminal_context_menu(terminal, window, settings, callback_object):
     if selection:
         search_text = selection.rstrip()
         if len(search_text) > SEARCH_SELECTION_LENGTH:
-            search_text = search_text[:SEARCH_SELECTION_LENGTH - 3] + "..."
+            search_text = search_text[: SEARCH_SELECTION_LENGTH - 3] + "..."
         mi.set_label(_("Search on Web: '%s'") % search_text)
         mi.set_sensitive(True)
     else:
@@ -147,7 +153,7 @@ def mk_terminal_context_menu(terminal, window, settings, callback_object):
             filename_str = str(filename)
             if len(filename_str) > FILE_SELECTION_LENGTH:
                 mi.set_label(
-                    _("Quick Open: {!s}...").format(filename_str[:FILE_SELECTION_LENGTH - 3])
+                    _("Quick Open: {!s}...").format(filename_str[: FILE_SELECTION_LENGTH - 3])
                 )
             else:
                 mi.set_label(_("Quick Open: {!s}").format(filename_str))

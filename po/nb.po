@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Guake 0.4.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-18 17:32+0200\n"
-"PO-Revision-Date: 2019-04-28 18:50+0000\n"
+"PO-Revision-Date: 2019-06-18 19:05+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/guake/"
 "guake/nb_NO/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7\n"
 
 #: ../guake/data/about.glade.h:1
 msgid "About Guake"
@@ -228,10 +228,6 @@ msgstr "Maksimal fanenavnslengde:"
 #: ../guake/data/prefs.glade.h:34
 msgid "0 means no size limit"
 msgstr "0 betyr ingen størrelsesgrense"
-
-#: ../guake/data/prefs.glade.h:35
-msgid "Abbreviate directories in tab names"
-msgstr "Forkort mappenavn i fanenavn"
 
 #: ../guake/data/prefs.glade.h:36
 msgid "Hide on lose focus"
@@ -1498,21 +1494,90 @@ msgid ""
 "Tabs session restore abort.\n"
 "Your session file ({session_filename}) missing schema_version as key"
 msgstr ""
+"Gjenoppretting av faneøkt ble avbrutt.\n"
+"Din økt-fil ({session_filename}) mangler schema_version som nøkkel."
 
 #: guake/guake_app.py:1252
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid ""
 "Tabs session restore abort.\n"
 "Your session file schema version is higher than current version "
 "({session_file_schema_version} > {current_schema_version})."
 msgstr ""
+"Gjenoppretting av faneøkt ble avbrutt.\n"
+"Din øktfils schema-versjon er høyere enn nåværende versjon "
+"({session_file_schema_version} > {current_schema_version})."
 
 #: guake/data/prefs.glade:409
+#, fuzzy
 msgid "Use workspace-specific tab sets (requires restart, only work on X11)"
 msgstr ""
+"Bruk arbeidsområdespesifikke fanesett (krever omstart, fungerer kun på X11)"
 
 #: guake/data/prefs.glade:809
 msgid "Hide tabbar when fullscreen"
+msgstr "Skjul faner i fullskjermsvisning"
+
+#: guake/data/prefs.glade:739
+msgid "Display as tab names:"
+msgstr ""
+
+#: guake/data/prefs.glade:753
+msgid "Full Path"
+msgstr ""
+
+#: guake/data/prefs.glade:754
+msgid "Abbreviated Path"
+msgstr ""
+
+#: guake/data/prefs.glade:755
+msgid "Last Segment"
+msgstr ""
+
+#: guake/main.py:99
+msgid "Put Guake out from fullscreen mode"
+msgstr ""
+
+#: guake/main.py:189
+msgid ""
+"Select a specific terminal in a split tab. Only useful with split terminals "
+"(TERMINAL_INDEX is the index of the tab)"
+msgstr ""
+
+#: guake/main.py:199
+msgid "Return the selected terminal index."
+msgstr ""
+
+#: guake/main.py:259
+msgid "Set the hexadecimal (#rrggbb) background color of the current terminal."
+msgstr ""
+
+#: guake/main.py:268
+msgid "Set the hexadecimal (#rrggbb) foreground color of the current terminal."
+msgstr ""
+
+#: guake/main.py:285
+msgid "Set colors from settings."
+msgstr ""
+
+#: guake/main.py:293
+msgid "Set colors of the current terminal from settings."
+msgstr ""
+
+#: guake/main.py:358
+msgid "Show support infomation"
+msgstr ""
+
+#: guake/menus.py:26
+msgid "Reset custom colors"
+msgstr ""
+
+#: guake/dialogs.py:101
+msgid "Do you want to reset custom colors for this tab?"
+msgstr ""
+
+#: guake/data/prefs.glade:835
+msgid "New tabs appear after the current tab"
 msgstr ""
 
 #~ msgid "key binding error"

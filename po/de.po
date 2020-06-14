@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Guake 0.4.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-07 19:07+0200\n"
-"PO-Revision-Date: 2019-05-06 20:48+0000\n"
+"PO-Revision-Date: 2019-05-19 09:48+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/guake/guake/de/>\n"
 "Language: de\n"
@@ -561,10 +561,6 @@ msgstr "Reiterleiste anzeigen"
 msgid "Use VTE titles for tab names"
 msgstr "VTE-Titel als Reiternamen benutzen"
 
-#: data/prefs.glade:618
-msgid "Abbreviate directories in tab names"
-msgstr "Verzeichnisnamen in Reitern abkürzen"
-
 #: data/prefs.glade:643
 msgid "Max tab name length:"
 msgstr "Max. Länge der Reiternamen:"
@@ -981,11 +977,11 @@ msgstr "Teilungsverwaltung"
 
 #: guake/prefs.py:142
 msgid "Split tab vertical"
-msgstr "Tab vertikal aufteilen"
+msgstr "Reiter vertikal aufteilen"
 
 #: guake/prefs.py:146
 msgid "Split tab horizontal"
-msgstr "Tab horizontal aufteilen"
+msgstr "Reiter horizontal aufteilen"
 
 #: guake/prefs.py:154
 msgid "Focus terminal above"
@@ -1041,7 +1037,7 @@ msgstr "Jedem Workspace eigene Tabs zuweisen"
 
 #: guake/prefs.py:128
 msgid "New tab in home directory"
-msgstr "Neuen Tab im HOME-Verzeichnis"
+msgstr "Neuen Reiter im HOME-Verzeichnis"
 
 #: guake/dialogs.py:56
 #, python-brace-format
@@ -1054,15 +1050,16 @@ msgstr "Guake-Farbpalettenschema ändern"
 
 #: data/prefs.glade:331
 msgid "Use workspace-specific tab sets (requires restart)"
-msgstr "Arbeitsflächenspezifische Tab-Gruppen verwenden (erfordert Neustart)"
+msgstr ""
+"Arbeitsflächenspezifische Reiter-Gruppen verwenden (erfordert Neustart)"
 
 #: guake/main.py:175
 msgid "Split the selected tab vertically."
-msgstr "Die ausgewählte Registerkarte vertikal aufteilen."
+msgstr "Die ausgewählten Reiter vertikal aufteilen."
 
 #: guake/main.py:183
 msgid "Split the selected tab horizontally."
-msgstr "Die ausgewählte Registerkarte horizontal aufteilen."
+msgstr "Den ausgewählte Reiter horizontal aufteilen."
 
 #: data/prefs.glade:348
 msgid "Show close buttons for tabs"
@@ -1195,6 +1192,9 @@ msgid ""
 "Tabs session restore abort.\n"
 "Your session file ({session_filename}) missing schema_version as key"
 msgstr ""
+"Abbruch der Wiederherstellung der Sitzungsreiter.\n"
+"Ihrer Sitzungsdatei ({session_filename}) fehlt die schema_version als "
+"Schlüssel"
 
 #: guake/guake_app.py:1252
 #, python-brace-format
@@ -1203,11 +1203,78 @@ msgid ""
 "Your session file schema version is higher than current version "
 "({session_file_schema_version} > {current_schema_version})."
 msgstr ""
+"Abbruch der Wiederherstellung der Sitzungsregisterkarten.\n"
+"Ihre Sitzungsdateischema-Version ist höher als die aktuelle Version "
+"({session_file_schema_version} > {current_schema_version})."
 
 #: guake/data/prefs.glade:409
 msgid "Use workspace-specific tab sets (requires restart, only work on X11)"
 msgstr ""
+"Arbeitsbereichsspezifische Registerkarten verwenden (erfordert Neustart, "
+"funktioniert nur auf X11)"
 
 #: guake/data/prefs.glade:809
 msgid "Hide tabbar when fullscreen"
+msgstr "Registerkartenleiste beim Vollbildmodus ausblenden"
+
+#: guake/data/prefs.glade:739
+msgid "Display as tab names:"
+msgstr ""
+
+#: guake/data/prefs.glade:753
+msgid "Full Path"
+msgstr ""
+
+#: guake/data/prefs.glade:754
+msgid "Abbreviated Path"
+msgstr ""
+
+#: guake/data/prefs.glade:755
+msgid "Last Segment"
+msgstr ""
+
+#: guake/main.py:99
+msgid "Put Guake out from fullscreen mode"
+msgstr ""
+
+#: guake/main.py:189
+msgid ""
+"Select a specific terminal in a split tab. Only useful with split terminals "
+"(TERMINAL_INDEX is the index of the tab)"
+msgstr ""
+
+#: guake/main.py:199
+msgid "Return the selected terminal index."
+msgstr ""
+
+#: guake/main.py:259
+msgid "Set the hexadecimal (#rrggbb) background color of the current terminal."
+msgstr ""
+
+#: guake/main.py:268
+msgid "Set the hexadecimal (#rrggbb) foreground color of the current terminal."
+msgstr ""
+
+#: guake/main.py:285
+msgid "Set colors from settings."
+msgstr ""
+
+#: guake/main.py:293
+msgid "Set colors of the current terminal from settings."
+msgstr ""
+
+#: guake/main.py:358
+msgid "Show support infomation"
+msgstr ""
+
+#: guake/menus.py:26
+msgid "Reset custom colors"
+msgstr ""
+
+#: guake/dialogs.py:101
+msgid "Do you want to reset custom colors for this tab?"
+msgstr ""
+
+#: guake/data/prefs.glade:835
+msgid "New tabs appear after the current tab"
 msgstr ""

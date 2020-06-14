@@ -17,6 +17,7 @@ License along with this program; if not, write to the
 Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 Boston, MA 02110-1301 USA
 """
+import re
 import code
 import logging
 import os
@@ -648,3 +649,44 @@ class GuakeTerminal(Vte.Terminal):
             self.custom_palette = [self._color_from_list(col) for col in palette]
         else:
             self.custom_palette = None
+
+    def match_deleting(self, txt):
+        if txt[:2] == "  ":
+            return len(txt) - len(txt.lstrip(" \t"))
+        match = re.match(' *\\w+', txt)
+        if not match:
+            match = re.match(' *[^\\w\\s]+', txt)
+        if match:
+            return match.span()[1]
+        return 0
+
+    def ctrl_backspace(self):
+        """
+        Delete the entire word on the left of the cursor, or only trailing spaces if there are more than one:
+            "$ hey soul sister  |" -> "hey soul sister|"
+            "$ hey soul sister |" -> "hey soul |"
+            "$ hey soul sister|"  -> "hey soul |"
+            "$ 2pi is aprox 3.14+3.95|" -> "$ 2pi is aprox 3.14+3.|"
+            "$ a+b | -> a+|"
+        """
+        col, row = self.get_cursor_position()
+        txt = self.get_text_range(row, 0, row, col-1)[0]
+        rev = "".join(reversed(txt))
+        n_characters_to_delete = self.match_deleting(rev)
+        tofeed = "\b" * n_characters_to_delete
+        self.feed_child(tofeed)
+
+    def del_times(self, times):
+        for _ in range(times):
+            e = Gdk.EventKey()
+            e.hardware_keycode = 119
+            e.keyval = 65535
+            e.type = Gdk.EventType.KEY_PRESS
+            e.window = self.get_window()
+            self.do_key_press_event(self, e)
+
+    def ctrl_delete(self):
+        col, row = self.get_cursor_position()
+        txt = self.get_text_range(row, col, row, self.get_column_count())[0]
+        n_characters_to_delete = self.match_deleting(txt)
+        self.del_times(n_characters_to_delete)

@@ -443,3 +443,16 @@ class Keybindings:
             self.accel_group.connect(
                 key, mask, Gtk.AccelFlags.VISIBLE, self.guake.accel_search_terminal
             )
+
+        from gi.repository import Gdk
+        key, mask = Gdk.KEY_BackSpace, Gdk.ModifierType.CONTROL_MASK
+        if key > 0:
+            self.accel_group.connect(
+                key, mask, Gtk.AccelFlags.VISIBLE, self.guake.accel_ctrl_backspace
+            )
+
+        key, mask = Gdk.KEY_Delete, Gdk.ModifierType.CONTROL_MASK
+        if key > 0:
+            self.accel_group.connect(
+                key, mask, Gtk.AccelFlags.VISIBLE, self.guake.accel_ctrl_delete
+            )

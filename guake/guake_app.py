@@ -1057,6 +1057,14 @@ class Guake(SimpleGladeApp):
         self.fullscreen_manager.toggle()
         return True
 
+    def accel_ctrl_backspace(self, *args):
+        self.notebook_manager.get_current_notebook().get_current_terminal().ctrl_backspace()
+        return True
+
+    def accel_ctrl_delete(self, *args):
+        self.notebook_manager.get_current_notebook().get_current_terminal().ctrl_delete()
+        return True
+
     def fullscreen(self):
         self.fullscreen_manager.fullscreen()
 
